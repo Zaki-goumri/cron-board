@@ -1,0 +1,24 @@
+{
+  "name": "cronboard-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Bull-board-style dashboard for @nestjs/schedule cron jobs.",
+  "packageManager": "pnpm@9.12.0",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "typecheck": "pnpm -r run typecheck",
+    "lint": "pnpm -r run lint",
+    "clean": "pnpm -r run clean && rm -rf node_modules",
+    "example:dev": "pnpm --filter cronboard-example dev",
+    "example:start": "pnpm --filter cronboard-example start"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "tsup": "^8.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}
