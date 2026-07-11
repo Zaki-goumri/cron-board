@@ -30,3 +30,6 @@ coverage/
 
 # UI build artifacts
 packages/ui/dist/
+
+# AI logs
+ai_logs/
