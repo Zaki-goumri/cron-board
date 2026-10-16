@@ -1,6 +1,6 @@
 {
   "name": "cronboard-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Framework-agnostic core types and storage interface for CronBoard.",
   "license": "MIT",
   "author": "Zaki Goumri",
@@ -9,7 +9,14 @@
     "url": "git+https://github.com/Zaki-goumri/cron-board.git",
     "directory": "packages/api"
   },
-  "keywords": ["cronboard", "cron", "scheduler", "nestjs", "dashboard", "monitoring"],
+  "keywords": [
+    "cronboard",
+    "cron",
+    "scheduler",
+    "nestjs",
+    "dashboard",
+    "monitoring"
+  ],
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -21,7 +28,11 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",
@@ -30,5 +41,12 @@
   "devDependencies": {
     "typescript": "^5.6.3",
     "tsup": "^8.3.0"
+  },
+  "homepage": "https://github.com/Zaki-goumri/cron-board#readme",
+  "bugs": {
+    "url": "https://github.com/Zaki-goumri/cron-board/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

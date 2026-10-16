@@ -1,0 +1,37 @@
+name: Publish to npm
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+      - name: Check tag matches package versions
+        run: |
+          for p in api nestjs redis ui; do
+            V="v$(node -p "require('./packages/$p/package.json').version")"
+            if [ "$V" != "$GITHUB_REF_NAME" ]; then
+              echo "Tag $GITHUB_REF_NAME does not match packages/$p version $V"
+              exit 1
+            fi
+          done
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm test
+      - run: pnpm -r publish --access public --no-git-checks --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true

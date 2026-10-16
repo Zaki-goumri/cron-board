@@ -1,6 +1,6 @@
 {
   "name": "cronboard-redis",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Optional Redis storage adapter for CronBoard execution history.",
   "license": "MIT",
   "author": "Zaki Goumri",
@@ -9,7 +9,13 @@
     "url": "git+https://github.com/Zaki-goumri/cron-board.git",
     "directory": "packages/redis"
   },
-  "keywords": ["cronboard", "redis", "storage", "cron", "nestjs"],
+  "keywords": [
+    "cronboard",
+    "redis",
+    "storage",
+    "cron",
+    "nestjs"
+  ],
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -21,14 +27,18 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist *.tsbuildinfo"
   },
   "peerDependencies": {
-    "cronboard-api": "workspace:*",
+    "cronboard-api": "workspace:^",
     "ioredis": "^5.0.0"
   },
   "peerDependenciesMeta": {
@@ -40,5 +50,12 @@
     "typescript": "^5.6.3",
     "tsup": "^8.3.0",
     "ioredis": "^5.4.0"
+  },
+  "homepage": "https://github.com/Zaki-goumri/cron-board#readme",
+  "bugs": {
+    "url": "https://github.com/Zaki-goumri/cron-board/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

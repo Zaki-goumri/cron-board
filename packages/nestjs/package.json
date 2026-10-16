@@ -1,6 +1,6 @@
 {
   "name": "cronboard-nestjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "NestJS module for monitoring and controlling @nestjs/schedule cron jobs via a web dashboard.",
   "license": "MIT",
   "author": "Zaki Goumri",
@@ -9,7 +9,16 @@
     "url": "git+https://github.com/Zaki-goumri/cron-board.git",
     "directory": "packages/nestjs"
   },
-  "keywords": ["cronboard", "cron", "nestjs", "scheduler", "dashboard", "monitoring", "bull-board", "schedule"],
+  "keywords": [
+    "cronboard",
+    "cron",
+    "nestjs",
+    "scheduler",
+    "dashboard",
+    "monitoring",
+    "bull-board",
+    "schedule"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -18,11 +27,15 @@
       "require": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "clean": "rm -rf dist *.tsbuildinfo"
   },
   "peerDependencies": {
@@ -38,12 +51,19 @@
     "socket.io": "^4.0.0"
   },
   "dependencies": {
-    "cronboard-api": "workspace:*",
-    "cronboard-ui": "workspace:*"
+    "cronboard-api": "workspace:^",
+    "cronboard-ui": "workspace:^"
   },
   "devDependencies": {
     "typescript": "^5.6.3",
     "tsup": "^8.3.0",
     "vitest": "^2.1.0"
+  },
+  "homepage": "https://github.com/Zaki-goumri/cron-board#readme",
+  "bugs": {
+    "url": "https://github.com/Zaki-goumri/cron-board/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

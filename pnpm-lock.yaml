@@ -97,10 +97,10 @@ importers:
         specifier: ^4.0.0
         version: 4.4.0
       cronboard-api:
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../api
       cronboard-ui:
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../ui
       reflect-metadata:
         specifier: ^0.2.0
@@ -125,7 +125,7 @@ importers:
   packages/redis:
     dependencies:
       cronboard-api:
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../api
     devDependencies:
       ioredis:
@@ -139,7 +139,19 @@ importers:
         version: 5.9.3
 
   packages/ui:
-    dependencies:
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.0
+        version: 18.3.31
+      '@types/react-dom':
+        specifier: ^18.3.0
+        version: 18.3.7(@types/react@18.3.31)
+      '@vitejs/plugin-react':
+        specifier: ^4.3.0
+        version: 4.7.0(vite@5.4.21(@types/node@26.1.1)(terser@5.49.0))
+      cronboard-api:
+        specifier: workspace:^
+        version: link:../api
       cronstrue:
         specifier: ^2.50.0
         version: 2.61.0
@@ -152,19 +164,6 @@ importers:
       socket.io-client:
         specifier: ^4.7.5
         version: 4.8.3
-    devDependencies:
-      '@types/react':
-        specifier: ^18.3.0
-        version: 18.3.31
-      '@types/react-dom':
-        specifier: ^18.3.0
-        version: 18.3.7(@types/react@18.3.31)
-      '@vitejs/plugin-react':
-        specifier: ^4.3.0
-        version: 4.7.0(vite@5.4.21(@types/node@26.1.1)(terser@5.49.0))
-      cronboard-api:
-        specifier: workspace:*
-        version: link:../api
       typescript:
         specifier: ^5.6.3
         version: 5.9.3
